@@ -20,7 +20,6 @@ module.exports = class RankCommand extends Command {
 
     }
 
-
     async run(msg, args) {
         try {
             const info = await getPlayer(args.user);
