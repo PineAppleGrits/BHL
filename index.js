@@ -36,7 +36,6 @@ client.registry
     .registerDefaultCommands({
         help: false,
         ping: false,
-        unknown-command: false,
         unknownCommandResponse: false
     })
     
