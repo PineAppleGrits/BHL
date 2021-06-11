@@ -1,8 +1,5 @@
 const { Command } = require('discord.js-commando');
 const { askUser } = require('../../helpers/helpers')
-const {
-    getPlayer
-} = require('../../helpers/booster.js')
 module.exports = class BoosterCommand extends Command {
     constructor(client) {
         super(client, {
