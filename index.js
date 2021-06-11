@@ -16,6 +16,7 @@ const client = new Commando.Client({
     owner: clientOwner,
     commandPrefix: clientPrefix,
     disableEveryone: true,
+    unknownCommandResponse: false
 })
 /* Initialize Commanmds, CommandsGroups */
 const path = require('path');
@@ -35,8 +36,8 @@ client.registry
     .registerDefaultCommands({
         help: false,
         ping: false,
-        unknown-command: false
-
+        unknown-command: false,
+        unknownCommandResponse: false
     })
     
     // Registers all of your commands in the ./commands/ directory
