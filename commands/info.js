@@ -10,7 +10,6 @@ module.exports = class RankCommand extends Command {
             group: 'info',
             memberName: 'rank',
             description: 'Ranks',
-            guildOnly: false,
             args: [{
                 key: 'user',
                 prompt: 'Enter user name',

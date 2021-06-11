@@ -20,7 +20,7 @@ client.registry
         ['info', 'Comandos de informacion']
     ])
     .registerDefaults()
-    .registerCommandsIn(path.join(__dirname, '/commands'));
+    .registerCommandsIn(path.join(__dirname + '/commands'));
 
 /* Initialize Database*/
 client.setProvider(
