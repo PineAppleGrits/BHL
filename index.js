@@ -10,10 +10,7 @@ const clientToken = process.env.TOKEN;
 const clientPrefix = process.env.PREFIX;
 const clientOwner = process.env.OWNER;
 // Code Const
-const activities = [
-    "<:booster:852729738930028614> Level 3, EZ.",
-    "BHL <3",
-  ];
+
 /* Initialize client*/
 const client = new Commando.Client({
     owner: clientOwner,
@@ -35,7 +32,10 @@ client.registry
     .registerDefaultGroups()
 
     // Registers all built-in groups, commands, and argument types
-    .registerDefaultCommands()
+    .registerDefaultCommands({
+        help: false,
+        ping: false
+    })
 
     // Registers all of your commands in the ./commands/ directory
     .registerCommandsIn(path.join(__dirname, 'commands'));
@@ -46,7 +46,13 @@ client.setProvider(
 
 
 /* Start up method*/
+const activityEmoji = client.emojis.cache.find(emoji => emoji.name === "booster");
+const activities = [
+    `${activityEmoji} Level 3, EZ.`,
+    "BHL <3",
+  ];
 client.on('ready', () => {
+    
     console.log(`Logged in as ${client.user.tag}!`);
     setInterval(() => {
         // generate random number between 1 and list length.
