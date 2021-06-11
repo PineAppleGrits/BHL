@@ -15,13 +15,18 @@ module.exports = class PingCommand extends Command {
 	}
 
 	async run(msg) {
-		const pingMsg = await msg.reply('Pinging...');
-		const pingEmbed = new Discord.MessageEmbed()
+		const pingMsg = new Discord.MessageEmbed()
+        .setColor(0x00AE86)
+        .setDescription(`${msg.channel.type !== 'dm' ? `${msg.author},` : ''} Pinging..`)
+        .setFooter("Brawlhalla Hardcore League, ")
+        .setTimestamp();
+		const pingMsg = await msg.reply('pingMsg);
+		const pongEmbed = new Discord.MessageEmbed()
         .setTitle("Pong! 🏓")
         .setColor(0x00AE86)
         .setDescription(`${msg.channel.type !== 'dm' ? `${msg.author},` : ''} El tiempo de respuesta es de ${this.client.ws.ping ? `El latido del bot es de ${Math.round(this.client.ws.ping)}ms.` : ''}`)
         .setFooter("Brawlhalla Hardcore League, ")
         .setTimestamp();
-        return pingMsg.edit('').then(pingMsg.edit(pingEmbed))
+        return pingMsg.edit(pongEmbed))
 	}
 };
