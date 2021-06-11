@@ -17,7 +17,6 @@ const client = new Commando.Client({
     commandPrefix: clientPrefix,
     disableEveryone: true,
 })
-client.user.setActivity("Starting...")
 /* Initialize Commanmds, CommandsGroups */
 const path = require('path');
 
@@ -37,10 +36,10 @@ client.registry
         help: false,
         ping: false
     })
-
+    
     // Registers all of your commands in the ./commands/ directory
     .registerCommandsIn(path.join(__dirname, 'commands'));
-/* Initialize Database*/
+    /* Initialize Database*/
 client.setProvider(
     sqlite.open({ filename: 'database.db', driver: sqlite3.Database }).then(db => new Commando.SQLiteProvider(db))
 ).catch(console.error);
@@ -51,8 +50,9 @@ const activityEmoji = client.emojis.cache.find(emoji => emoji.name === "booster"
 const activities = [
     `${activityEmoji} Level 3, EZ.`,
     "BHL <3",
-  ];
+];
 client.on('ready', () => {
+    client.user.setActivity("Starting...")
     console.log(`Logged in as ${client.user.tag}!`);
     setInterval(() => {
         // generate random number between 1 and list length.
