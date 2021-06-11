@@ -9,9 +9,16 @@ require('dotenv').config();
 const clientToken = process.env.TOKEN;
 const clientPrefix = process.env.PREFIX;
 const clientOwner = process.env.OWNER;
+// Code Const
+const activities = [
+    "<:booster:852729738930028614> Level 3, EZ.",
+    "BHL <3",
+  ];
 /* Initialize client*/
 const client = new Commando.Client({
-    owner: clientOwner
+    owner: clientOwner,
+    commandPrefix: clientPrefix,
+    disableEveryone: true,
 })
 /* Initialize Commanmds, CommandsGroups */
 const path = require('path');
@@ -39,10 +46,16 @@ client.setProvider(
 
 
 /* Start up method*/
-
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-  });
+    setInterval(() => {
+        // generate random number between 1 and list length.
+        const randomIndex = Math.floor(Math.random() * (activities.length - 1) + 1);
+        const newActivity = activities[randomIndex];
+    
+        client.user.setActivity(newActivity);
+      }, 20000);  
+});
   
 
 client.on('debug', e => {console.log(e)})

@@ -3,7 +3,7 @@ var unirest = require("unirest");
 const rank = {};
 
 rank.getPlayer = async (player) => {
-
+ try {
     var req = unirest("GET", "https://brawlhalla.p.rapidapi.com/apiplayer.php");
 
     req.query({
@@ -23,6 +23,11 @@ rank.getPlayer = async (player) => {
     
         return res.body;
     });
+ } 
+ catch (e) {
+    console.error(e)
+ }
+
 
 }
 
