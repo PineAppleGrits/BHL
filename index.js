@@ -34,7 +34,9 @@ client.registry
     // Registers all built-in groups, commands, and argument types
     .registerDefaultCommands({
         help: false,
-        ping: false
+        ping: false,
+        unknown-command: false
+
     })
     
     // Registers all of your commands in the ./commands/ directory
