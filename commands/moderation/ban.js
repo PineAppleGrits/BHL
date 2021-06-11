@@ -17,27 +17,32 @@ module.exports = class BanCommand extends Command {
           key: 'userToBan',
           prompt:
             'Please mention the user you want to ban with @ or provide his ID',
-          type: 'string'
+          type: 'string',
         },
         {
           key: 'reason',
           prompt: 'Why do you want to ban this user',
-          type: 'string'
+          type: 'string',
         },
-      ]
+      ],
     });
   }
 
-  run(message, { userToBan, reason}) {
+  run(message, { userToBan, reason }) {
     const user =
       message.mentions.members.first() ||
       message.guild.members.fetch(userToBan);
     if (user == undefined)
       return message.channel.send('Please try again with a valid user');
     user
-      .ban({reason})
+    .send(
+      'You were banned from ' +
+        message.guild.name +
+        ' With the reason: ' +
+        reason
+    );
+      .ban({ reason })
       .then(() => {
-        userToBan.send('You were banned from ' + message.guild.name + ' With the reason: ' + reason)
         const banEmbed = new MessageEmbed()
           .addField('Banned:', userToBan)
           .addField('Reason', reason)
@@ -45,7 +50,7 @@ module.exports = class BanCommand extends Command {
         message.channel.send(banEmbed);
       })
 
-      .catch(e => {
+      .catch((e) => {
         message.say(
           'Something went wrong when trying to ban this user, I probably do not have the permission to ban him'
         );
