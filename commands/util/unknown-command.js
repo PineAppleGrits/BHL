@@ -8,7 +8,6 @@ module.exports = class UnknownCommandCommand extends Command {
 			memberName: 'unknown',
 			description: 'Displays help information for when an unknown command is used.',
 			examples: ['unknown'],
-			unknown: true,
 			hidden: true
 		});
 	}
