@@ -22,6 +22,6 @@ module.exports = class PingCommand extends Command {
         .setDescription(`${msg.channel.type !== 'dm' ? `${msg.author},` : ''} El tiempo de respuesta es de ${this.client.ws.ping ? `El latido del bot es de ${Math.round(this.client.ws.ping)}ms.` : ''}`)
         .setFooter("Brawlhalla Hardcore League, ")
         .setTimestamp();
-        return pingMsg.edit(pingEmbed)
+        return pingMsg.edit('').then(pingMsg.edit(pingEmbed))
 	}
 };
