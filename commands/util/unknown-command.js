@@ -14,13 +14,16 @@ module.exports = class UnknownCommandCommand extends Command {
 	}
 
 	run(msg) {
-        const embed = 
-		return msg.reply(
+        const embed = new Discord.MessageEmbed()
+        .setDescription('```diff\n -2\n```');
+		return msg.reply('Te confundiste de commando mepa.. (<-Testeando unknown comamnd->)')
+		
+		/*return msg.reply(
 			`Unknown command. Use ${msg.anyUsage(
 				'help',
 				msg.guild ? undefined : null,
 				msg.guild ? undefined : null
 			)} to view the command list.`
-		);
+		); */
 	}
 };
