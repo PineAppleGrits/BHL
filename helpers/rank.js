@@ -8,7 +8,7 @@ rank.getPlayer = async (player) => {
 
     req.query({
         "type": "1v1",
-        "p": player
+        "p": "PineAppleGrits"
     });
     
     req.headers({

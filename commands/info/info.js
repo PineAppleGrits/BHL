@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando');
 const {
     getPlayer
-} = require('../helpers/rank.js')
+} = require('../../helpers/rank.js')
 module.exports = class RankCommand extends Command {
     constructor(client) {
         super(client, {
