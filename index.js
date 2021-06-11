@@ -17,6 +17,7 @@ const client = new Commando.Client({
     commandPrefix: clientPrefix,
     disableEveryone: true,
 })
+client.user.setActivity("Starting...")
 /* Initialize Commanmds, CommandsGroups */
 const path = require('path');
 
@@ -52,7 +53,6 @@ const activities = [
     "BHL <3",
   ];
 client.on('ready', () => {
-    
     console.log(`Logged in as ${client.user.tag}!`);
     setInterval(() => {
         // generate random number between 1 and list length.
