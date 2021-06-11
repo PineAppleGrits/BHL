@@ -1,7 +1,6 @@
 /* Import Modules*/
 const Discord = require('discord.js');
 const Commando = require('discord.js-commando');
-const path = require('path');
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 
@@ -15,13 +14,22 @@ const client = new Commando.Client({
     owner: clientOwner
 })
 /* Initialize Commanmds, CommandsGroups */
-client.registry
-    .registerGroups([
-        ['info', 'Comandos de informacion']
-    ])
-    .registerDefaults()
-    .registerCommandsIn(path.join(__dirname + '/commands'));
+const path = require('path');
 
+client.registry
+    // Registers your custom command groups
+    .registerGroups([
+        ['fun', 'Fun commands'],
+        ['some', 'Some group'],
+        ['other', 'Some other group'],
+        ['info', 'info']
+    ])
+
+    // Registers all built-in groups, commands, and argument types
+    .registerDefaults()
+
+    // Registers all of your commands in the ./commands/ directory
+    .registerCommandsIn(path.join(__dirname, 'commands'));
 /* Initialize Database*/
 client.setProvider(
     sqlite.open({ filename: 'database.db', driver: sqlite3.Database }).then(db => new Commando.SQLiteProvider(db))
