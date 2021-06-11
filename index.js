@@ -25,9 +25,7 @@ client.registry
     // Registers your custom command groups
     .registerDefaultTypes()
     .registerGroups([
-        ['fun', 'Fun commands'],
-        ['some', 'Some group'],
-        ['other', 'Some other group'],
+        ['moderation', 'Comandos de moderacion'],
         ['info', 'info']
     ])
     .registerDefaultGroups()
@@ -50,7 +48,7 @@ client.setProvider(
 /* Start up method*/
 const activityEmoji = client.emojis.cache.find(emoji => emoji.name === "booster");
 const activities = [
-    `${activityEmoji} Level 3, EZ.`,
+    activityEmoji + "Level 3 EZ.",
     "BHL <3",
 ];
 client.on('ready', () => {
@@ -66,6 +64,5 @@ client.on('ready', () => {
 });
   
 
-client.on('debug', e => {console.log(e)})
 /* Client login*/
 client.login(clientToken);
