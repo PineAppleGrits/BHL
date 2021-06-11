@@ -52,6 +52,9 @@ const activities = [
     activityEmoji + "Level 3 EZ.",
     "BHL <3",
 ];
+const channelNames = [
+    client.guilds.cache.get("831173275647213617")
+]
 client.on('ready', () => {
     client.user.setActivity("Starting...")
     console.log(`Logged in as ${client.user.tag}!`);
@@ -62,6 +65,7 @@ client.on('ready', () => {
     
         client.user.setActivity(newActivity);
       }, 20000);  
+
 });
   
 

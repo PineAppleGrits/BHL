@@ -40,7 +40,7 @@ module.exports = class BanCommand extends Command {
         message.guild.name +
         ' With the reason: ' +
         reason
-    );
+    )
       .ban({ reason })
       .then(() => {
         const banEmbed = new MessageEmbed()
