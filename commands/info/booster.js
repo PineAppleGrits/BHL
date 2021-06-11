@@ -2,15 +2,15 @@ const { Command } = require('discord.js-commando');
 const { askUser } = require('../../helpers/helpers')
 const {
     getPlayer
-} = require('../../helpers/rank.js')
-module.exports = class RankCommand extends Command {
+} = require('../../helpers/booster.js')
+module.exports = class BoosterCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'rank',
-            aliases: ['rank'],
+            name: 'booster',
+            aliases: ['booster'],
             group: 'info',
-            memberName: 'rank',
-            description: 'Ranks',
+            memberName: 'booster',
+            description: 'Boosters',
         });
 
     }
