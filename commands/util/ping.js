@@ -15,12 +15,12 @@ module.exports = class PingCommand extends Command {
 	}
 
 	async run(msg) {
-		const pingMsg = new Discord.MessageEmbed()
+		const pingEmbed = new Discord.MessageEmbed()
         .setColor(0x00AE86)
         .setDescription(`${msg.channel.type !== 'dm' ? `${msg.author},` : ''} Pinging..`)
         .setFooter("Brawlhalla Hardcore League, ")
         .setTimestamp();
-		const pingMsg = await msg.reply('pingMsg);
+		const pingMsg = await msg.reply(pingEmbed);
 		const pongEmbed = new Discord.MessageEmbed()
         .setTitle("Pong! 🏓")
         .setColor(0x00AE86)
