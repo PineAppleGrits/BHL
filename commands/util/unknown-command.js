@@ -3,11 +3,11 @@ const Discord = require('discord.js');
 module.exports = class UnknownCommandCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'unknown-command',
+			name: 'unknown',
 			group: 'util',
-			memberName: 'unknown-command',
+			memberName: 'unknown',
 			description: 'Displays help information for when an unknown command is used.',
-			examples: ['unknown-command kickeverybodyever'],
+			examples: ['unknown'],
 			unknown: true,
 			hidden: true
 		});
