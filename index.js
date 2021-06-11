@@ -26,7 +26,8 @@ client.registry
     .registerDefaultTypes()
     .registerGroups([
         ['moderation', 'Comandos de moderacion'],
-        ['info', 'info']
+        ['info', 'info'],
+        ['other', 'other']
     ])
     .registerDefaultGroups()
 
