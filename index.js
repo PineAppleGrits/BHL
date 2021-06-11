@@ -18,15 +18,17 @@ const path = require('path');
 
 client.registry
     // Registers your custom command groups
+    .registerDefaultTypes()
     .registerGroups([
         ['fun', 'Fun commands'],
         ['some', 'Some group'],
         ['other', 'Some other group'],
         ['info', 'info']
     ])
+    .registerDefaultGroups()
 
     // Registers all built-in groups, commands, and argument types
-    .registerDefaults()
+    .registerDefaultsCommands()
 
     // Registers all of your commands in the ./commands/ directory
     .registerCommandsIn(path.join(__dirname, 'commands'));
