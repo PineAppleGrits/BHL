@@ -127,7 +127,6 @@ module.exports = class BanCommand extends Command {
       menu.on('page-changed', (pageIndex, page) => {
         console.log(`Menu is now on "${page.content.title}" (${pageIndex})`);
       });
-*/
     } catch (e) {
         console.log(e);
         return msg.say('Something went horribly wrong! Please try again later.')
