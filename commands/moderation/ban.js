@@ -23,7 +23,7 @@ module.exports = class BanCommand extends Command {
       ],
     });
   }
-  async run(msg, {userToBan}) {
+  async run(message, {userToBan}) {
     try {
       var reason;
       var reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
@@ -129,7 +129,7 @@ module.exports = class BanCommand extends Command {
       });
     } catch (e) {
         console.log(e);
-        return msg.say('Something went horribly wrong! Please try again later.')
+        return message.say('Something went horribly wrong! Please try again later.')
     } 
 }
 /*
