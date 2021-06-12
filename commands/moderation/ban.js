@@ -25,6 +25,7 @@ module.exports = class BanCommand extends Command {
   }
   async run(msg, args) {
     try {
+      console.log(messages);
 /*
       %eval 
       const userToBan = message.author;
