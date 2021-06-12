@@ -59,11 +59,11 @@ module.exports = class BanCommand extends Command {
                 ]
             }),
             reactions: {
-                ':pencil:': 'sub-menu',
-                ':envelope:': async (menu) => {
+              '📝': 'sub-menu',
+                '✉️': async (menu) => {
                     menu.user.send(`Hello dear ${menu.user.username}.`);
                 },
-                ':x:': 'delete'
+                '❌': 'delete'
             }
         },
         {
@@ -100,15 +100,15 @@ module.exports = class BanCommand extends Command {
                 ]
             }),
             reactions: {
-                ':arrow_left:': 'main',
-                ':one:': async(menu) => {
+                '⬅️': 'main',
+                '1️⃣': async(menu) => {
                   menu.setPage(0)
                   menu.clearReactions()
                   menu.addReactions()
                 },
-                ':two:': '',
-                ':three:': '',
-                ':x:': 'delete'
+                '2️⃣': '',
+                '3️⃣': '',
+                '❌': 'delete'
             }
         }
       ]);
