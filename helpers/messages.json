@@ -1,0 +1,12 @@
+{
+    "messages": {
+        "ban" {
+            "Persona non grata": "El equipo administrativo decidió que el usuario ya no es bienvenido al servidor.",
+            "Toxiquear": "El usuario presentó/presenta una conducta no permitida dentro del servidor.",
+            "Molestar en DM": "El usuario ha hostigado/acosado/molestado a usuarios pertenecientes de esta comunidad en los mensajes privados.",
+            "Spammear/Pasar links": "El usuario ha enviado links no permitidos dentro del servidor."
+        }
+    },
+    "colors": {},
+    "emojis": {}
+}
