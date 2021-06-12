@@ -23,19 +23,13 @@ module.exports = class BanCommand extends Command {
       ],
     });
   }
-  async run(msg, args) {
+  async run(msg, {userToBan}) {
     try {
-      console.log(messages);
-/*
-      %eval 
-      const userToBan = message.author;
       var reason;
-      var  reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
+      var reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
       var arr = "";
       var roles = message.member.roles.member._roles;
       roles.forEach(element => arr += `<@&${element}>`);
-      const { Client, MessageEmbed } = require('discord.js');
-      const { DiscordEmbedMenu } = require('discord.js-embed-menu');
       let menu = new DiscordEmbedMenu(message.channel, message.author, [
         {
        
