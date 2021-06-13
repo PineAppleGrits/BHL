@@ -29,6 +29,7 @@ module.exports = class BanCommand extends Command {
       var reason = "";
       var reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
       var arr = "";
+      var notifyUser = true;
       var roles = message.member.roles.member._roles;
       roles.forEach(element => arr += `<@&${element}>`);
       let menu = new DiscordEmbedMenu(message.channel, message.author, [
@@ -134,6 +135,7 @@ module.exports = class BanCommand extends Command {
       menu.start();
       
       menu.on('page-changing', (oldPageIndex, oldPage, newPageIndex, newPage) => {
+        console.log(menu)
         console.log(reason)
         console.log(reasonMsg)
         if(reason == "" || reason == undefined){
