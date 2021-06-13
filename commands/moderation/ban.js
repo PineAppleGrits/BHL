@@ -140,8 +140,10 @@ module.exports = class BanCommand extends Command {
         console.log(reasonMsg)
         if(reason == "" || reason == undefined){
           reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
+        console.log("if true")
         } else {
-          reasonMsg = reason
+          console.log("else")
+          reasonMsg = reason;
         }
         console.log(`Menu is going from "${oldPage.content.title}" (${oldPageIndex}) to "${newPage.content.title}" (${newPageIndex})`);
       });
