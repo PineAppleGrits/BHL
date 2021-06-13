@@ -26,7 +26,7 @@ module.exports = class BanCommand extends Command {
   }
   async run(message, {userToBan}) {
     try {
-      var reason;
+      var reason = "";
       var reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
       var arr = "";
       var roles = message.member.roles.member._roles;
@@ -134,7 +134,7 @@ module.exports = class BanCommand extends Command {
       menu.start();
       
       menu.on('page-changing', (oldPageIndex, oldPage, newPageIndex, newPage) => {
-        if(!reason){
+        if(reason == "" || reason == undefined){
           reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
         } else {
           reasonMsg = reason
