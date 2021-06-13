@@ -134,6 +134,8 @@ module.exports = class BanCommand extends Command {
       menu.start();
       
       menu.on('page-changing', (oldPageIndex, oldPage, newPageIndex, newPage) => {
+        console.log(reason)
+        console.log(reasonMsg)
         if(reason == "" || reason == undefined){
           reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
         } else {
