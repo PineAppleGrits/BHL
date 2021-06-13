@@ -26,7 +26,7 @@ module.exports = class BanCommand extends Command {
   }
   async run(message, {userToBan}) {
     try {
-      var reason = "";
+      var reason;
       var reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
       var arr = "";
       var notifyUser = true;
@@ -138,8 +138,8 @@ module.exports = class BanCommand extends Command {
         console.log(menu)
         console.log(reason)
         console.log(reasonMsg)
-        if(reason == "" || reason == undefined){
-          reasonMsg = "Porfavor seleccione una razón para proceder con la sanción."
+        if(reason){
+          reasonMsg = reason;
         console.log("if true")
         } else {
           console.log("else")
