@@ -135,19 +135,12 @@ module.exports = class BanCommand extends Command {
       menu.start();
       
       menu.on('page-changing', (oldPageIndex, oldPage, newPageIndex, newPage) => {
-        console.log(menu)
-        console.log(reason)
-        console.log(reasonMsg)
         if(reason){
           reasonMsg = reason;
-        console.log("if true")
-        } else {
-          console.log("else")
-          reasonMsg = reason;
-        }
-        console.log(`Menu is going from "${oldPage.content.title}" (${oldPageIndex}) to "${newPage.content.title}" (${newPageIndex})`);
+                }
+          console.log(`Menu is going from "${oldPage.content.title}" (${oldPageIndex}) to "${newPage.content.title}" (${newPageIndex})`);
       });
-      
+     
       menu.on('page-changed', (pageIndex, page) => {
         console.log(`Menu is now on "${page.content.title}" (${pageIndex})`);
       });
