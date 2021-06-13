@@ -2,6 +2,7 @@ const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
 const { DiscordEmbedMenu } = require('discord.js-embed-menu');
 const { messages } = require('../../helpers/messages.json');
+const reasons = messages.ban;
 module.exports = class BanCommand extends Command {
   constructor(client) {
     super(client, {
@@ -102,12 +103,29 @@ module.exports = class BanCommand extends Command {
             reactions: {
                 '⬅️': 'main',
                 '1️⃣': async(menu) => {
+                  reason = reasons["Persona non grata"];
                   menu.setPage(0)
                   menu.clearReactions()
                   menu.addReactions()
                 },
-                '2️⃣': '',
-                '3️⃣': '',
+                '2️⃣': async(menu) => {
+                  reason = reasons["Toxiquear"];
+                  menu.setPage(0)
+                  menu.clearReactions()
+                  menu.addReactions()
+                },
+                '3️⃣': async(menu) => {
+                  reason = reasons["Molestar en DM"];
+                  menu.setPage(0)
+                  menu.clearReactions()
+                  menu.addReactions()
+                },
+                '4️⃣': async(menu) => {
+                  reason = reasons["Spammear/Pasar links"];
+                  menu.setPage(0)
+                  menu.clearReactions()
+                  menu.addReactions()
+                },
                 '❌': 'delete'
             }
         }
