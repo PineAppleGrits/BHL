@@ -68,7 +68,7 @@ client.on('ready', () => {
 
 });
 client.on('message', (message) => {
-    if(message.contains("ez")){
+    if(message.content.toLowerCase().contains("ez")){
         message.react("852675346969264209")
     }
 })
