@@ -67,7 +67,11 @@ client.on('ready', () => {
       }, 20000);  
 
 });
-  
+client.on('message', (message) => {
+    if(message == ez){
+        message.react("852675346969264209")
+    }
+})
 
 /* Client login*/
 client.login(clientToken);
