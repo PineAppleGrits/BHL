@@ -17,6 +17,9 @@ require("./database/database");
 /* Initialize client*/
 const client = new Commando.Client({
  partials: ['USER', 'GUILD_MEMBER', 'CHANNEL', 'MESSAGE', 'REACTION'],
+    ws: { intents: ["DIRECT_MESSAGES", "DIRECT_MESSAGE_REACTIONS", "GUILDS", "GUILD_BANS", "GUILD_EMOJIS", 
+    "GUILD_INVITES", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS", 
+    "GUILD_VOICE_STATES"] },
     owner: clientOwner,
     commandPrefix: clientPrefix,
     disableEveryone: true,
