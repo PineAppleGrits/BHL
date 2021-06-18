@@ -16,6 +16,7 @@ const clientOwner = process.env.OWNER;
 require("./database/database");
 /* Initialize client*/
 const client = new Commando.Client({
+ partials: ['USER', 'GUILD_MEMBER', 'CHANNEL', 'MESSAGE', 'REACTION'],
     owner: clientOwner,
     commandPrefix: clientPrefix,
     disableEveryone: true,
