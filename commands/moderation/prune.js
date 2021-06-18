@@ -16,17 +16,13 @@ module.exports = class PruneCommand extends Command {
           key: 'deleteCount',
           prompt: 'How many messages do you want to delete?',
           type: 'integer',
-          // eslint-disable-next-line @getify/proper-arrows/where
           validate: deleteCount => deleteCount < 101 && deleteCount > 0
-        }
+        },
       ]
     });
   }
 
   run(message, { deleteCount }) {
- if(!message.member.guild.me.hasPermission('MANAGE_CHANNELS', 'MANAGE_MESSAGES')){
-     return message.channel.send('You dont have permissions.');
-  }
     message.channel
       .bulkDelete(deleteCount)
       .then(messages => message.say(`Deleted ${messages.size} messages`))

@@ -19,7 +19,7 @@ module.exports = class UserInfoCommand extends Commando.Command {
     })
   }
 
-  run = async (message, { mencion }) => {
+  async run(message, { mencion }) {
     const { guild, channel } = message
 
     const user = message.member.user
